@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desarrollador - Sistema de Requisitos</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Panel del Desarrollador</h1>
+  </header>
+
+  <div class="dashboard">
+    <nav class="sidebar">
+      <h3>Menú</h3>
+      <a href="#requerimientos">📋 Requerimientos</a>
+      <a href="#actualizar">⚙️ Actualizar Estado</a>
+      <a href="#chat">💬 Mensajería</a>
+    </nav>
+
+    <main>
+      <!-- ======= REQUERIMIENTOS ======= -->
+      <section id="requerimientos">
+        <h2>Requerimientos del Cliente</h2>
+        <ul id="listaRequerimientos">
+          <li>Agregar dashboard con métricas</li>
+          <li>Mejorar interfaz de usuario</li>
+        </ul>
+      </section>
+
+      <!-- ======= ACTUALIZAR ESTADO ======= -->
+      <section id="actualizar">
+        <h2>Actualizar Estado del Proyecto</h2>
+
+        <div class="timeline" id="timeline">
+          <div class="step" data-step="1">
+            <div class="circle"><img src="recibido.png" alt=""></div>
+            <p>Requerimiento recibido</p>
+          </div>
+
+          <div class="step" data-step="2">
+            <div class="circle"><img src="confirmado.png" alt=""></div>
+            <p>Requerimiento confirmado</p>
+          </div>
+
+          <div class="step" data-step="3">
+            <div class="circle"><img src="desarrollo.png" alt=""></div>
+            <p>En desarrollo</p>
+          </div>
+
+          <div class="step" data-step="4">
+            <div class="circle"><img src="Finalizado.png" alt=""></div>
+            <p>Proyecto finalizado</p>
+          </div>
+        </div>
+
+        <div class="estado-form">
+          <label for="estadoSelect">Selecciona el estado actual:</label>
+          <select id="estadoSelect">
+            <option value="1">Requerimiento recibido</option>
+            <option value="2">Requerimiento confirmado</option>
+            <option value="3">En desarrollo</option>
+            <option value="4">Proyecto finalizado</option>
+          </select>
+          <button onclick="actualizarEstado()">Actualizar</button>
+        </div>
+      </section>
+
+      <!-- ======= CHAT ======= -->
+      <section id="chat">
+        <h2>Comunicación con el Cliente</h2>
+        <div class="chat-box" id="chatBox">
+          <p><b>Cliente:</b> ¿Podrías actualizar el diseño del panel?</p>
+        </div>
+        <input type="text" id="mensajeDesarrollador" placeholder="Escribe un mensaje...">
+        <button onclick="enviarMensaje('desarrollador')">Enviar</button>
+      </section>
+    </main>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="logo.jpg" alt="Logo" class="logo">
+      <p class="frase">"Innovando cada requisito, construimos el futuro."</p>
+    </div>
+
+    <div class="footer-contacto">
+      <p>📞 WhatsApp: <a href="https://wa.me/51936938301" target="_blank">+51 936 938 301</a></p>
+      <p>📧 Correo: <a href="mailto:royerhuaranga082@gmail.com">royerhuaranga082@gmail.com</a></p>
+      <p>🌐 Facebook: <a href="https://facebook.com/LeonelRios" target="_blank">Leonel Rios</a></p>
+    </div>
+
+    <div class="footer-copy">
+      <p>Desarrollado por <strong>Leonel Rios</strong> © 2025</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN DE WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/51936938301" class="btn-whatsapp" target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <!-- BOTÓN DE USUARIO FLOTANTE -->
+  <div class="user-float">
+    <img src="icono.png" alt="Usuario" id="userIcon">
+    <div class="user-menu" id="userMenu">
+      <button onclick="logout()">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
