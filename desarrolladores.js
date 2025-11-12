@@ -27,3 +27,15 @@ desarrolladores.forEach(dev => {
 
   devList.appendChild(card);
 });
+
+// Colores visuales según estado
+document.querySelectorAll(".dev-card span").forEach(span => {
+  if (span.textContent === "Disponible") {
+    span.style.color = "#2ecc71"; // verde
+    span.style.fontWeight = "600";
+  } else {
+    span.style.color = "#e74c3c"; // rojo
+    span.style.fontWeight = "600";
+  }
+});
+

@@ -12,6 +12,7 @@
   <!-- ===== ENCABEZADO ===== -->
   <header>
     <h1>Panel del Cliente</h1>
+    <button id="menuToggle" class="menu-toggle">☰ Menú</button>
   </header>
 
   <!-- ===== PANEL PRINCIPAL ===== -->
@@ -31,6 +32,7 @@
         <h2>Nuevo Requerimiento</h2>
         <textarea id="nuevoRequerimiento" placeholder="Describe tu requerimiento..."></textarea>
         <button onclick="enviarRequerimiento()">Enviar</button>
+        <div id="listaRequerimientos"></div>
       </section>
 
       <!-- Sección Estado del Proyecto -->
@@ -75,30 +77,10 @@
     </main>
   </div>
 
-  
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-logo">
-      <img src="logo.jpg" alt="Logo" class="logo">
-      <p class="frase">"Innovando cada requisito, construimos el futuro."</p>
-    </div>
-
-    <div class="footer-contacto">
-      <p>📞 WhatsApp: <a href="https://wa.me/51936938301" target="_blank">+51 936 938 301</a></p>
-      <p>📧 Correo: <a href="mailto:royerhuaranga082@gmail.com">royerhuaranga082@gmail.com</a></p>
-      <p>🌐 Facebook: <a href="https://facebook.com/LeonelRios" target="_blank">Leonel Rios</a></p>
-    </div>
-
-    <div class="footer-copy">
-      <p>Desarrollado por <strong>Leonel Rios</strong> © 2025</p>
-    </div>
-  </footer>
-
   <!-- ===== BOTÓN DE WHATSAPP FLOTANTE ===== -->
-  <a href="https://wa.me/51936938301" class="btn-whatsapp" target="_blank">
-    <img src="whatsapp.png" alt="WhatsApp">
-  </a>
+  <a href="https://wa.me/51936938301" class="btn-wsp" target="_blank">
+  <img src="WhatsApp.png" alt="WhatsApp">
+</a>
 
   <!-- ===== BOTÓN DE USUARIO FLOTANTE ===== -->
   <div class="user-float">
@@ -107,9 +89,6 @@
       <button onclick="logout()">Cerrar sesión</button>
     </div>
   </div>
-
-  
-
 
   <script src="script.js"></script>
 </body>
