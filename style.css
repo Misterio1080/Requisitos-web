@@ -1134,3 +1134,148 @@ section h2 {
     font-size: 0.9em;
   }
 }
+
+/* ===============================
+   CHAT CON ARCHIVOS (USANDO LOGO archivo.png)
+=============================== */
+.chat-input-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Campo de texto */
+.chat-input-area input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  min-width: 150px;
+}
+
+/* ====== BOTÓN DE ENVIAR ====== */
+.chat-input-area .btn-enviar {
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.chat-input-area .btn-enviar:hover {
+  background: var(--azul-oscuro);
+}
+
+/* ====== BOTÓN DE ARCHIVO CON LOGO ====== */
+.btn-archivo {
+  background: #f2f2f2 !important; /* fondo plomo claro */
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0;
+}
+
+.btn-archivo:hover {
+  background: #e0e0e0 !important;
+  transform: scale(1.08);
+}
+
+/* Imagen del botón */
+.btn-archivo img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* Input file oculto */
+#inputArchivo {
+  display: none;
+}
+
+/* Archivos en el chat */
+.chat-file {
+  display: inline-block;
+  margin-top: 5px;
+  background: #f0f0f0;
+  color: var(--azul);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.9em;
+}
+
+.chat-file:hover {
+  background: var(--azul);
+  color: #fff;
+}
+
+/* Imágenes en el chat */
+.chat-img {
+  display: block;
+  margin-top: 5px;
+  max-width: 200px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* ===============================
+   RESPONSIVE CHAT INPUT
+=============================== */
+@media (max-width: 768px) {
+  .chat-input-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .chat-input-area input[type="text"],
+  .chat-input-area .btn-enviar {
+    width: 100%;
+  }
+
+  .btn-archivo {
+    align-self: flex-end;
+    width: 36px;
+    height: 36px;
+  }
+
+  .btn-archivo img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-input-area input[type="text"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .btn-archivo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .btn-archivo img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+
+

@@ -37,22 +37,22 @@
 
         <div class="timeline" id="timeline">
           <div class="step" data-step="1">
-            <div class="circle"><img src="recibido.png" alt=""></div>
+            <div class="circle"><img src="Img/recibido.png" alt=""></div>
             <p>Requerimiento recibido</p>
           </div>
 
           <div class="step" data-step="2">
-            <div class="circle"><img src="confirmado.png" alt=""></div>
+            <div class="circle"><img src="Img/confirmado.png" alt=""></div>
             <p>Requerimiento confirmado</p>
           </div>
 
           <div class="step" data-step="3">
-            <div class="circle"><img src="desarrollo.png" alt=""></div>
+            <div class="circle"><img src="Img/desarrollo.png" alt=""></div>
             <p>En desarrollo</p>
           </div>
 
           <div class="step" data-step="4">
-            <div class="circle"><img src="Finalizado.png" alt=""></div>
+            <div class="circle"><img src="Img/Finalizado.png" alt=""></div>
             <p>Proyecto finalizado</p>
           </div>
         </div>
@@ -70,25 +70,29 @@
       </section>
 
       <!-- ======= CHAT ======= -->
-      <section id="chat">
-        <h2>Comunicación con el Cliente</h2>
-        <div class="chat-box" id="chatBox">
-          <p><b>Cliente:</b> ¿Podrías actualizar el diseño del panel?</p>
-        </div>
-        <input type="text" id="mensajeDesarrollador" placeholder="Escribe un mensaje...">
-        <button onclick="enviarMensaje('desarrollador')">Enviar</button>
-      </section>
-    </main>
+<section id="chat">
+  <h2>Comunicación con el Cliente</h2>
+  <div class="chat-box" id="chatBox">
+    <p><b>Cliente:</b> ¿Podrías actualizar el diseño del panel?</p>
   </div>
+
+  <div class="chat-input-area">
+    <input type="file" id="archivoDesarrollador" hidden>
+    <button class="btn-archivo" onclick="document.getElementById('archivoDesarrollador').click()">📎</button>
+    <input type="text" id="mensajeDesarrollador" placeholder="Escribe un mensaje...">
+    <button onclick="enviarMensaje('desarrollador')">Enviar</button>
+  </div>
+</section>
+
 
   <!-- BOTÓN DE WHATSAPP FLOTANTE -->
   <a href="https://wa.me/51936938301" class="btn-wsp" target="_blank">
-  <img src="WhatsApp.png" alt="WhatsApp">
+  <img src="Img/WhatsApp.png" alt="WhatsApp">
 </a>
 
   <!-- BOTÓN DE USUARIO FLOTANTE -->
   <div class="user-float">
-    <img src="icono.png" alt="Usuario" id="userIcon">
+    <img src="Img/icono.png" alt="Usuario" id="userIcon">
     <div class="user-menu" id="userMenu">
       <button onclick="logout()">Cerrar sesión</button>
     </div>

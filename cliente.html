@@ -40,25 +40,25 @@
         <h2>Estado del Proyecto</h2>  
         <div class="timeline">
           <div class="step completed">
-            <div class="circle"><img src="recibido.png" alt=""></div>
+            <div class="circle"><img src="Img/recibido.png" alt=""></div>
             <p>Requerimiento recibido</p>
             <span>21/05 - 20:01</span>
           </div>
 
           <div class="step completed">
-            <div class="circle"><img src="confirmado.png" alt=""></div>
+            <div class="circle"><img src="Img/confirmado.png" alt=""></div>
             <p>Requerimiento confirmado</p>
             <span>21/05 - 20:51</span>
           </div>
 
           <div class="step active">
-            <div class="circle"><img src="desarrollo.png" alt=""></div>
+            <div class="circle"><img src="Img/desarrollo.png" alt=""></div>
             <p>En desarrollo</p>
             <span>22/05 - 09:30</span>
           </div>
 
           <div class="step">
-            <div class="circle"><img src="Finalizado.png" alt=""></div>
+            <div class="circle"><img src="Img/Finalizado.png" alt=""></div>
             <p>Proyecto finalizado</p>
             <span>—</span>
           </div>
@@ -71,20 +71,33 @@
         <div class="chat-box" id="chatBox">
           <p><b>Desarrollador:</b> Ya implementé el formulario de contacto.</p>
         </div>
-        <input type="text" id="mensajeCliente" placeholder="Escribe un mensaje...">
-        <button onclick="enviarMensaje('cliente')">Enviar</button>
+
+        <!-- Campo de entrada del chat -->
+        <div class="chat-input-area">
+          <!-- Botón de archivo (ahora con imagen archivo.png) -->
+          <input type="file" id="inputArchivo" hidden>
+          <button class="btn-archivo" onclick="document.getElementById('inputArchivo').click()">
+            <img src="Img/Archivo.png" alt="Subir archivo">
+          </button>
+
+          <!-- Campo de texto -->
+          <input type="text" id="mensajeCliente" placeholder="Escribe un mensaje...">
+
+          <!-- Botón de enviar -->
+          <button class="btn-enviar" onclick="enviarMensaje('cliente')">Enviar</button>
+        </div>
       </section>
     </main>
   </div>
 
   <!-- ===== BOTÓN DE WHATSAPP FLOTANTE ===== -->
   <a href="https://wa.me/51936938301" class="btn-wsp" target="_blank">
-  <img src="WhatsApp.png" alt="WhatsApp">
-</a>
+    <img src="Img/WhatsApp.png" alt="WhatsApp">
+  </a>
 
   <!-- ===== BOTÓN DE USUARIO FLOTANTE ===== -->
   <div class="user-float">
-    <img src="icono.png" alt="Usuario" id="userIcon">
+    <img src="Img/icono.png" alt="Usuario" id="userIcon">
     <div class="user-menu" id="userMenu">
       <button onclick="logout()">Cerrar sesión</button>
     </div>
