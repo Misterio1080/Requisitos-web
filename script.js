@@ -215,3 +215,35 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// contador inicial de notificaciones (puedes cambiarlo)
+let notificaciones = 3;
+
+function verNotificaciones() {
+  if (notificaciones > 0) {
+    mostrarToast("Tienes nuevas notificaciones sobre el proyecto");
+  }
+
+  // Reiniciar contador
+  notificaciones = 0;
+  document.getElementById("notiCount").style.display = "none";
+}
+
+// Mostrar mensaje flotante tipo Facebook
+function mostrarToast(texto) {
+  let toast = document.createElement("div");
+  toast.className = "noti-toast";
+  toast.innerText = texto;
+
+  document.body.appendChild(toast);
+
+  // Mostrar
+  setTimeout(() => toast.classList.add("show"), 100);
+
+  // Ocultar y borrar
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 400);
+  }, 3000);
+}
+
+

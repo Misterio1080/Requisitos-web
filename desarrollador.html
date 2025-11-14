@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Desarrollador - Sistema de Requisitos</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- OVERRIDE LOCAL: asegurar que las burbujas del desarrollador vayan a la derecha -->
+  <style>
+    /* Forzamos alineación derecha para mensajes del desarrollador */
+    .chat-box { display: flex; flex-direction: column; }
+    .chat-bubble.desarrollador {
+      align-self: flex-end !important;
+      background: #dbe8ff !important; /* color claro para distinguir */
+      color: #0b1738;
+      margin-left: 8px !important;
+      margin-right: 10px !important;
+    }
+
+    /* Mensajes de cliente a la izquierda (no tocamos si ya están bien) */
+    .chat-bubble.cliente {
+      align-self: flex-start;
+      background: #f1f1f1;
+      margin-left: 10px;
+      margin-right: 8px;
+    }
+
+    /* Máximo ancho y ajuste en móviles */
+    .chat-bubble {
+      max-width: 78%;
+      word-wrap: break-word;
+      box-sizing: border-box;
+    }
+
+    /* Si quieres ajustar el nombre mostrado (Opcional) */
+    .chat-bubble b { text-transform: capitalize; }
+
+    /* Mantener consistencia en móviles */
+    @media (max-width: 480px) {
+      .chat-bubble { max-width: 92%; font-size: 0.95em; }
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <h1>Panel del Desarrollador</h1>
+
+    <div class="notification-area" onclick="verNotificaciones()">
+      <img src="Img/Notificaciones.png" class="icon-noti" alt="Notificaciones">
+      <span id="notiCount" class="noti-count">3</span>
+    </div>
+
   </header>
 
   <div class="dashboard">
@@ -70,35 +111,50 @@
       </section>
 
       <!-- ======= CHAT ======= -->
-<section id="chat">
-  <h2>Comunicación con el Cliente</h2>
-  <div class="chat-box" id="chatBox">
-    <p><b>Cliente:</b> ¿Podrías actualizar el diseño del panel?</p>
-  </div>
+      <section id="chat">
+        <h2>Comunicación con el Cliente</h2>
 
-  <div class="chat-input-area">
-    <input type="file" id="archivoDesarrollador" hidden>
-    <button class="btn-archivo" onclick="document.getElementById('archivoDesarrollador').click()">📎</button>
-    <input type="text" id="mensajeDesarrollador" placeholder="Escribe un mensaje...">
-    <button onclick="enviarMensaje('desarrollador')">Enviar</button>
-  </div>
-</section>
+        <div class="chat-box" id="chatBox">
+          <!-- Mensaje de cliente (izquierda) -->
+          <div class="chat-bubble cliente">
+            <b>Cliente:</b> ¿Podrías actualizar el diseño del panel?
+          </div>
+          <!-- ejemplo de mensaje de desarrollador ya posicionado a la derecha -->
+          <!-- <div class="chat-bubble desarrollador"><b>Desarrollador:</b> Sí, lo hago ahora.</div> -->
+        </div>
 
+        <div class="chat-input-area">
+          <!-- Input archivo (mantener id para tu JS) -->
+          <input type="file" id="archivoDesarrollador" hidden>
+          <button class="btn-archivo" onclick="document.getElementById('archivoDesarrollador').click()"
+            aria-label="Subir archivo">
+            <img src="Img/Archivo.png" alt="Subir archivo" style="width:22px;height:22px;">
+          </button>
 
-  <!-- BOTÓN DE WHATSAPP FLOTANTE -->
-  <a href="https://wa.me/51936938301" class="btn-wsp" target="_blank">
-  <img src="Img/WhatsApp.png" alt="WhatsApp">
-</a>
+          <!-- Campo de texto -->
+          <input type="text" id="mensajeDesarrollador" placeholder="Escribe un mensaje...">
 
-  <!-- BOTÓN DE USUARIO FLOTANTE -->
-  <div class="user-float">
-    <img src="Img/icono.png" alt="Usuario" id="userIcon">
-    <div class="user-menu" id="userMenu">
-      <button onclick="logout()">Cerrar sesión</button>
-    </div>
+          <!-- Botón enviar -->
+          <button class="btn-enviar" onclick="enviarMensaje('desarrollador')">Enviar</button>
+        </div>
+      </section>
+
+      <!-- BOTÓN DE WHATSAPP FLOTANTE -->
+      <a href="https://wa.me/51936938301" class="btn-wsp" target="_blank">
+        <img src="Img/WhatsApp.png" alt="WhatsApp">
+      </a>
+
+      <!-- BOTÓN DE USUARIO FLOTANTE -->
+      <div class="user-float">
+        <img src="Img/icono.png" alt="Usuario" id="userIcon">
+        <div class="user-menu" id="userMenu">
+          <button onclick="logout()">Cerrar sesión</button>
+        </div>
+      </div>
+
+    </main>
   </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>

@@ -1068,8 +1068,8 @@ section h2 {
 /* ======== BOTÓN FLOTANTE USUARIO RESPONSIVE ======== */
 .user-float {
   position: fixed;
-  top: 15px;
-  right: 15px;
+  top: 5px;
+  right: 30px;
   z-index: 999;
 }
 
@@ -1277,5 +1277,79 @@ section h2 {
 }
 
 
+/* ===============================
+   ICONO DE NOTIFICACIONES
+=============================== */
+.notification-area {
+  position: absolute;
+  top: 15px;
+  right: 120px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon-noti {
+  width: 28px;
+  height: 28px;
+}
+
+
+.noti-count {
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+/* ===============================
+   MENSAJE FLOTANTE DE NOTIFICACIÓN
+=============================== */
+.noti-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .4s ease;
+  z-index: 1000;
+}
+
+.noti-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 600px) {
+
+  .notification-area {
+    right: 20px;
+    top: 12px;
+  }
+
+  .icon-noti {
+    width: 24px;
+    height: 24px;
+  }
+
+  .noti-toast {
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+}
 
 
